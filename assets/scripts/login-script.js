@@ -4,27 +4,33 @@
  * Gunakan fungsi goToLogin() untuk menampilkan halaman login
  * Gunakan fungsi showPopUp() untuk menampilkan pop up error
  */
-
-// Menangkap seluruh element input form
+/* Comment : Membuat variabel untuk setiap elemen view. */
 const loginFormElement = document.querySelector('#loginForm');
 const inputEmailElement = document.querySelector('#inputEmail');
 const inputPasswordElement = document.querySelector('#inputPassword');
-
-// create a variabel that store username and password should be
+ 
+/* Comment : Membuat variabel untuk menyimpan informasi email dan password. */
 const expectedEmail = 'admin@dicoding.com';
 const expectedPassword = 'superpassword';
-
-
-// giving an event into login form element when the form is submited
+ 
+/* Comment :  Menambahkan aksi klik pada button. */
 loginFormElement.addEventListener('submit', function(event) {
   event.preventDefault();
-
+  
+  /* Comment : Mendapatkan nilai dari masing-masing input (email dan password) ketika tombol ditekan. */
   const email = inputEmailElement.value;
   const password = inputPasswordElement.value;
-  // Validate email and password user inputed with email and password expected
+ 
+  /* Comment : Memastikan bahwa nilai email dan password sesuai dengan nilai yang tersimpan. */
   if (email == expectedEmail && password == expectedPassword) {
+ 
+    /* Comment : Jika sesuai maka program akan berpindah ke halaman home. */
     goToHome();
+ 
   } else {
+ 
+    /* Comment : Namun jika tidak sesuai maka akan menampilkan informasi bahwa input salah. */
     showPopUp();
+ 
   }
 });
